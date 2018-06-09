@@ -6,12 +6,13 @@ setup(
     packages=['pomidor'],
     install_requires=[
         'click',
+        'pyserial',
+        'pyYAML',
         'requests',
-        'pyserial'
     ],
     entry_points={
         'console_scripts': [
-            'toggl-poll = pomidor.poller:toggl_poll',
+            'pomidor = pomidor.poller:toggl_poll',
         ],
     }
 )

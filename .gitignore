@@ -1,2 +1,3 @@
 pomidor.cfg
 *.egg-info
+__pycache__
