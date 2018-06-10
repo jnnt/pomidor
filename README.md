@@ -17,8 +17,10 @@ TODO (maybe, someday):
 * refactor
 * CLI for raising/lowering the flag 'manually'
 * Ansible plugin to activate the flag for playbooks which require more attention
+* swap Micropython for something cheaper
 
-Oh, if you'd like to run `pomidor` (tested on Ubuntu 17.10 Linux):
+Oh, if you'd like to
+run `pomidor` (tested on Ubuntu 17.10 Linux):
 
 * clone this repo
 * create a python3 [virtualenv](https://docs.python.org/3/library/venv.html) and activate it 
