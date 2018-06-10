@@ -17,3 +17,17 @@ TODO (maybe, someday):
 * refactor
 * CLI for raising/lowering the flag 'manually'
 * Ansible plugin to activate the flag for playbooks which require more attention
+
+Oh, if you'd like to run `pomidor` (tested on Ubuntu 17.10 Linux):
+
+* clone this repo
+* create a python3 [virtualenv](https://docs.python.org/3/library/venv.html) and activate it 
+* in the terminal, in the main project folder `pip install -e .`
+* `cp pomidor.sample.cfg pomidor.cfg` (create config file)
+* edit `pomidor.cfg` in your text editor. Set `toggl_api_token`. Maybe you will have to change `device` path, maybe not.
+* connect servo to your MicroPython board. [Useful docs here.](http://docs.micropython.org/en/latest/pyboard/pyboard/tutorial/servo.html?highlight=servo)
+* plug the board to your computer using USB cable. A removable media should mount in your system. Copy the `pyb/main.py` file to the mounted pyboard. The servo number is hardcoded in the `main.py` file, as well as other values (angles). You may want to edit it.
+* unmount the pyboard and reset it
+* in the terminal with virtualenv activated, run `pomidor pomidor.cfg` or create an environment variable `POMIDOR_CFG` with the path to your config and run `pomidor` without params.
+* the servo should move after a few seconds if you start/stop a task on Toggl. If wverything works, design your awesome 'busy' flag and attach it to the servo. 
+* have fun!
