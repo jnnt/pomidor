@@ -23,7 +23,9 @@ def toggl_poll(cfg):
             ser = serial.Serial(config['device'], config['baud'], timeout=0.1)
         except serial.serialutil.SerialException:
             print(f'Serial connection error, attempt: {i}')
-            time.sleep(1)
+            time.sleep(1.5)
+            if i == SERIAL_CONNECT_RETRIES - 1:
+                sys.exit(1)
 
     def stop(signum, frame):
         print(f'received signal {signum}...')
